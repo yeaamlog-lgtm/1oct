@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f6f8fc"
+    >
+
+    <meta
+        name="description"
+        content="Gmail"
+    >
+
+    <title>Gmail</title>
+
+    <link
+        rel="stylesheet"
+        href="gmail-style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="gmail-header">
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Main menu"
+    >
+        ☰
+    </button>
+
+
+    <div class="gmail-logo">
+
+        <span class="gmail-logo-mark"></span>
+
+        <span>Gmail</span>
+
+    </div>
+
+
+    <div class="gmail-search">
+
+        <span class="search-icon">
+            🔍
+        </span>
+
+        <input
+            id="mailSearch"
+            type="search"
+            placeholder="Search mail"
+            autocomplete="off"
+            aria-label="Search mail"
+        >
+
+        <button
+            id="clearSearch"
+            class="clear-search"
+            type="button"
+            aria-label="Clear search"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <button
+            class="header-action"
+            type="button"
+            aria-label="Help"
+        >
+            ?
+        </button>
+
+        <button
+            class="header-action"
+            type="button"
+            aria-label="Settings"
+        >
+            ⚙
+        </button>
+
+        <button
+            class="header-action"
+            type="button"
+            aria-label="Google apps"
+        >
+            ⋮⋮⋮
+        </button>
+
+        <button
+            class="profile-button"
+            type="button"
+            aria-label="Account"
+        >
+            P
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     SIDEBAR
+     ===================================================== -->
+
+<aside
+    class="gmail-sidebar"
+    id="gmailSidebar"
+>
+
+
+    <button
+        class="compose-button"
+        id="composeButton"
+        type="button"
+    >
+
+        <span class="compose-icon">
+            ＋
+        </span>
+
+        <span>
+            Compose
+        </span>
+
+    </button>
+
+
+
+    <button
+        class="sidebar-item active"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            ✉
+        </span>
+
+        <span class="sidebar-label">
+            Inbox
+        </span>
+
+        <span
+            class="sidebar-count"
+            id="inboxCount"
+        >
+            18
+        </span>
+
+    </button>
+
+
+
+    <button
+        class="sidebar-item"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            ☆
+        </span>
+
+        <span class="sidebar-label">
+            Starred
+        </span>
+
+    </button>
+
+
+
+    <button
+        class="sidebar-item"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            ◷
+        </span>
+
+        <span class="sidebar-label">
+            Snoozed
+        </span>
+
+    </button>
+
+
+
+    <button
+        class="sidebar-item"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            ➤
+        </span>
+
+        <span class="sidebar-label">
+            Sent
+        </span>
+
+    </button>
+
+
+
+    <button
+        class="sidebar-item"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            📝
+        </span>
+
+        <span class="sidebar-label">
+            Drafts
+        </span>
+
+        <span
+            class="sidebar-count"
+            id="draftCount"
+        >
+            0
+        </span>
+
+    </button>
+
+
+
+    <button
+        class="sidebar-item"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            ⋯
+        </span>
+
+        <span class="sidebar-label">
+            More
+        </span>
+
+    </button>
+
+
+
+    <div class="sidebar-divider"></div>
+
+
+    <div class="sidebar-heading">
+        Labels
+    </div>
+
+
+
+    <button
+        class="sidebar-item"
+        type="button"
+    >
+
+        <span class="sidebar-icon">
+            ⚙
+        </span>
+
+        <span class="sidebar-label">
+            Settings
+        </span>
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="gmail-main">
+
+
+    <!-- TOOLBAR -->
+
+    <div class="mail-toolbar">
+
+
+        <button
+            id="selectAll"
+            class="toolbar-button"
+            type="button"
+            aria-label="Select all"
+        >
+            □
+        </button>
+
+
+
+        <button
+            id="refreshMail"
+            class="toolbar-button"
+            type="button"
+            aria-label="Refresh"
+        >
+            ↻
+        </button>
+
+
+
+        <button
+            class="toolbar-button"
+            type="button"
+            aria-label="More"
+        >
+            ⋮
+        </button>
+
+
+
+        <span
+            class="mail-range"
+            aria-live="polite"
+        >
+            1–18 of 18
+        </span>
+
+
+    </div>
+
+
+
+    <!-- CATEGORY TABS -->
+
+    <div class="category-tabs">
+
+
+        <button
+            class="category-tab active"
+            type="button"
+        >
+            Primary
+        </button>
+
+
+        <button
+            class="category-tab"
+            type="button"
+        >
+            Promotions
+        </button>
+
+
+        <button
+            class="category-tab"
+            type="button"
+        >
+            Social
+        </button>
+
+
+    </div>
+
+
+
+    <!-- MAIL LIST -->
+
+    <section
+        class="mail-list"
+        id="mailList"
+        aria-label="Inbox"
+    >
+    </section>
+
+
+
+    <!-- NO RESULTS -->
+
+    <div
+        id="noResults"
+        hidden
+    >
+
+        <strong>
+            No messages found
+        </strong>
+
+        <span>
+            Try different search terms.
+        </span>
+
+    </div>
+
+
+</main>
+<!-- =====================================================
+     MAIL READER MODAL
+     ===================================================== -->
+
+<div
+    class="mail-overlay"
+    id="mailOverlay"
+    hidden
+>
+
+
+    <article
+        class="mail-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalSubject"
+    >
+
+
+        <header class="mail-modal-header">
+
+
+            <h2 id="modalSubject">
+                Message
+            </h2>
+
+
+            <button
+                class="modal-close"
+                id="closeMail"
+                type="button"
+                aria-label="Close message"
+            >
+                ×
+            </button>
+
+
+        </header>
+
+
+
+        <div
+            class="mail-modal-body"
+            id="modalBody"
+        >
+        </div>
+
+
+
+        <div class="modal-toolbar">
+
+
+            <button
+                class="modal-tool"
+                type="button"
+                aria-label="Reply"
+                title="Reply"
+            >
+                ↩
+            </button>
+
+
+            <button
+                class="modal-tool"
+                type="button"
+                aria-label="Archive"
+                title="Archive"
+            >
+                🗄
+            </button>
+
+
+            <button
+                class="modal-tool"
+                type="button"
+                aria-label="Delete"
+                title="Delete"
+            >
+                🗑
+            </button>
+
+
+            <button
+                class="modal-tool"
+                type="button"
+                aria-label="More"
+                title="More"
+            >
+                ⋮
+            </button>
+
+
+        </div>
+
+
+    </article>
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+     ===================================================== -->
+
+<div
+    id="toast"
+    role="status"
+    aria-live="polite"
+>
+</div>
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script
+    src="gmail.js"
+    defer
+></script>
+
+
+</body>
+
+</html>

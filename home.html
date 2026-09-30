@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Google</title>
+    <link rel="stylesheet" href="home-style.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <nav class="top-nav">
+        <a href="letter.html">Letter</a>
+        <a href="gmail.html">Gmail</a>
+        <a href="proposal.html">Proposal</a>
+        <button class="profile-button" aria-label="Profile">♡</button>
+    </nav>
+</header>
+
+<main class="google-home">
+
+    <section class="google-center" id="googleCenter">
+
+        <div class="google-logo" aria-label="Google">
+            <span class="logo-blue">G</span><span class="logo-red">o</span><span class="logo-yellow">o</span><span class="logo-blue">g</span><span class="logo-green">l</span><span class="logo-red">e</span>
+        </div>
+
+        <div class="search-area">
+
+            <div class="google-search-box" id="googleSearchBox">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <button
+                    class="clear-button"
+                    id="clearSearch"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+                <button
+                    class="mic-button"
+                    id="micButton"
+                    aria-label="Voice search"
+                >
+                    ◉
+                </button>
+
+                <button
+                    class="lens-button"
+                    id="lensButton"
+                    aria-label="Search"
+                >
+                    ◇
+                </button>
+
+            </div>
+
+            <div
+                class="search-suggestions"
+                id="searchSuggestions"
+            ></div>
+
+            <div class="google-buttons">
+
+                <button id="searchButton">
+                    Google Search
+                </button>
+
+                <button id="luckyButton">
+                    I'm Feeling Lucky
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section
+        class="results-page"
+        id="resultsPage"
+        hidden
+    >
+
+        <div class="results-header">
+
+            <div class="results-logo">
+                <span class="logo-blue">G</span><span class="logo-red">o</span><span class="logo-yellow">o</span><span class="logo-blue">g</span><span class="logo-green">l</span><span class="logo-red">e</span>
+            </div>
+
+            <div class="results-search">
+
+                <div class="results-search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="resultsInput"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        id="resultsClear"
+                        class="clear-button"
+                        aria-label="Clear"
+                    >
+                        ×
+                    </button>
+
+                    <button
+                        id="resultsMic"
+                        class="mic-button"
+                        aria-label="Voice search"
+                    >
+                        ◉
+                    </button>
+
+                    <button
+                        id="resultsLens"
+                        class="lens-button"
+                        aria-label="Search"
+                    >
+                        ◇
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="results-nav">
+            <span class="active">All</span>
+            <span>Images</span>
+            <span>Videos</span>
+            <span>More</span>
+        </div>
+
+        <div class="results-content">
+
+            <div class="result-count" id="resultCount"></div>
+
+            <div id="resultsContainer"></div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="google-footer">
+
+    <div class="footer-country">
+        Made with ♡
+    </div>
+
+    <div class="footer-links">
+        <a href="letter.html">Letter</a>
+        <a href="gmail.html">Gmail</a>
+        <a href="proposal.html">Proposal</a>
+    </div>
+
+</footer>
+
+<script src="search.js"></script>
+
+</body>
+</html>

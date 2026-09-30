@@ -1,0 +1,1044 @@
+:root {
+    --ivory: #f7f1e8;
+    --paper: #fffaf2;
+    --paper-deep: #efe2d2;
+    --rose: #d9a7a7;
+    --burgundy: #7b3f4a;
+    --burgundy-dark: #5f3039;
+    --gold: #c9ad78;
+    --gold-light: #e3cfaa;
+    --taupe: #a99582;
+    --brown: #5f5148;
+    --brown-soft: #78695f;
+    --white: #fffdf9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 255, 255, 0.8),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 90%,
+            rgba(217, 167, 167, 0.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--ivory),
+            var(--paper-deep)
+        );
+
+    color: var(--brown);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+}
+
+/* ========================================
+   PAGE
+======================================== */
+
+.contract-page {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 35px 18px 60px;
+}
+
+/* ========================================
+   CONTRACT CARD
+======================================== */
+
+.contract-card {
+    width: min(820px, 100%);
+
+    position: relative;
+
+    padding: 55px 58px 45px;
+
+    background:
+        linear-gradient(
+            rgba(255, 250, 242, 0.97),
+            rgba(247, 239, 228, 0.97)
+        );
+
+    border: 1px solid rgba(201, 173, 120, 0.55);
+
+    box-shadow:
+        0 30px 80px rgba(95, 81, 72, 0.16),
+        0 8px 25px rgba(95, 81, 72, 0.08);
+
+    animation:
+        contractReveal 1s cubic-bezier(.2, .8, .2, 1)
+        both;
+}
+
+.contract-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 13px;
+
+    border: 1px solid rgba(201, 173, 120, 0.3);
+
+    pointer-events: none;
+}
+
+.contract-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 22px;
+
+    border: 1px solid rgba(201, 173, 120, 0.12);
+
+    pointer-events: none;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.contract-header {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+}
+
+.contract-crown {
+    color: var(--burgundy);
+
+    font-size: 34px;
+
+    margin-bottom: 14px;
+
+    animation:
+        heartPulse 2.5s ease-in-out infinite;
+}
+
+.contract-eyebrow {
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 10px;
+
+    color: var(--taupe);
+
+    margin-bottom: 14px;
+}
+
+.contract-header h1 {
+    color: var(--burgundy);
+
+    font-size: clamp(39px, 7vw, 64px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+.contract-subtitle {
+    margin-top: 15px;
+
+    color: var(--brown-soft);
+
+    font-size: 15px;
+
+    letter-spacing: 0.3px;
+}
+
+.gold-divider {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    margin: 28px auto 34px;
+}
+
+.gold-divider span {
+    width: 105px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold)
+        );
+}
+
+.gold-divider span:last-child {
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            var(--gold)
+        );
+}
+
+.gold-divider b {
+    color: var(--gold);
+
+    font-size: 12px;
+}
+
+/* ========================================
+   INTRO
+======================================== */
+
+.contract-intro {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: 0 auto 38px;
+
+    text-align: center;
+
+    color: var(--brown-soft);
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+.contract-intro p + p {
+    margin-top: 12px;
+}
+
+.contract-intro strong {
+    color: var(--burgundy);
+
+    font-weight: 600;
+}
+
+/* ========================================
+   CLAUSES
+======================================== */
+
+.clauses {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.clause {
+    display: grid;
+
+    grid-template-columns: 62px 1fr;
+
+    gap: 20px;
+
+    padding: 24px 24px;
+
+    background:
+        rgba(255, 253, 249, 0.66);
+
+    border: 1px solid rgba(201, 173, 120, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.clause:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(201, 173, 120, 0.55);
+
+    box-shadow:
+        0 10px 25px rgba(95, 81, 72, 0.08);
+}
+
+.clause-number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 50%;
+
+    color: var(--burgundy);
+
+    font-size: 17px;
+
+    font-style: italic;
+}
+
+.clause-content h2 {
+    color: var(--burgundy);
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    margin-bottom: 7px;
+}
+
+.clause-content p {
+    color: var(--brown-soft);
+
+    font-size: 15px;
+
+    line-height: 1.75;
+}
+
+/* ========================================
+   SIGNATURE SECTION
+======================================== */
+
+.signature-section {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 48px;
+
+    padding-top: 38px;
+
+    border-top:
+        1px solid rgba(201, 173, 120, 0.35);
+
+    text-align: center;
+}
+
+.signature-eyebrow {
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 10px;
+
+    color: var(--taupe);
+
+    margin-bottom: 10px;
+}
+
+.signature-heading h2 {
+    color: var(--burgundy);
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+.signature-heading > p:last-child {
+    margin-top: 8px;
+
+    color: var(--brown-soft);
+
+    font-size: 14px;
+}
+
+/* ========================================
+   SIGNATURE CANVAS
+======================================== */
+
+.signature-wrapper {
+    width: min(570px, 100%);
+
+    margin: 27px auto 0;
+
+    position: relative;
+
+    padding-bottom: 15px;
+}
+
+#signatureCanvas {
+    display: block;
+
+    width: 100%;
+    height: 185px;
+
+    background:
+        linear-gradient(
+            rgba(255, 253, 249, 0.45),
+            rgba(255, 253, 249, 0.45)
+        );
+
+    border:
+        1px solid rgba(201, 173, 120, 0.3);
+
+    cursor: crosshair;
+
+    touch-action: none;
+}
+
+.signature-line {
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+    bottom: 31px;
+
+    height: 1px;
+
+    background:
+        rgba(95, 81, 72, 0.38);
+
+    pointer-events: none;
+}
+
+.signature-label {
+    position: absolute;
+
+    left: 30px;
+    bottom: 8px;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: var(--taupe);
+}
+
+/* ========================================
+   SIGNATURE BUTTONS
+======================================== */
+
+.clear-signature {
+    border: none;
+
+    background: transparent;
+
+    color: var(--taupe);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    padding: 7px 12px;
+
+    transition:
+        color 0.25s ease;
+}
+
+.clear-signature:hover {
+    color: var(--burgundy);
+}
+
+.agree-button {
+    display: block;
+
+    margin: 20px auto 0;
+
+    min-width: 190px;
+
+    height: 55px;
+
+    padding: 0 30px;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--burgundy);
+
+    background: var(--burgundy);
+
+    color: var(--white);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 26px rgba(123, 63, 74, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.agree-button:hover {
+    transform: translateY(-3px);
+
+    background: var(--burgundy-dark);
+
+    box-shadow:
+        0 14px 30px rgba(123, 63, 74, 0.27);
+}
+
+.agree-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.agree-button:disabled {
+    cursor: default;
+
+    opacity: 0.7;
+
+    transform: none;
+}
+
+.signature-hint {
+    min-height: 20px;
+
+    margin-top: 13px;
+
+    color: var(--burgundy);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 11px;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+.signature-hint.visible {
+    opacity: 1;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.contract-footer {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 45px;
+
+    text-align: center;
+}
+
+.footer-line {
+    width: 120px;
+
+    height: 1px;
+
+    margin: 0 auto 17px;
+
+    background: var(--gold);
+}
+
+.contract-footer p {
+    color: var(--taupe);
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+.contract-footer span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--burgundy);
+
+    font-size: 17px;
+}
+
+/* ========================================
+   SEAL OVERLAY
+======================================== */
+
+.seal-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(59, 38, 36, 0.48);
+
+    backdrop-filter: blur(7px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.seal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.seal-content {
+    width: min(500px, 100%);
+
+    padding: 50px 35px 40px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf2,
+            #efe2d2
+        );
+
+    border: 1px solid rgba(201, 173, 120, 0.6);
+
+    box-shadow:
+        0 35px 90px rgba(38, 23, 22, 0.28);
+
+    transform:
+        translateY(25px)
+        scale(0.94);
+
+    transition:
+        transform 0.7s cubic-bezier(.2, .8, .2, 1);
+}
+
+.seal-overlay.active .seal-content {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+/* ========================================
+   WAX SEAL
+======================================== */
+
+.wax-seal {
+    width: 112px;
+    height: 112px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 28%,
+            #a85b68,
+            #7b3f4a 55%,
+            #5d3039 100%
+        );
+
+    border:
+        5px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        inset 0 0 0 3px rgba(95, 48, 57, 0.35),
+        inset 0 8px 15px rgba(255, 255, 255, 0.12),
+        0 12px 28px rgba(95, 48, 57, 0.25);
+
+    color: #e9c9a0;
+
+    font-size: 39px;
+
+    opacity: 0;
+
+    transform:
+        scale(0.35)
+        rotate(-15deg);
+}
+
+.seal-overlay.active .wax-seal {
+    animation:
+        sealStamp 1s
+        cubic-bezier(.2, .9, .3, 1.15)
+        0.25s
+        forwards;
+}
+
+.seal-small {
+    color: var(--taupe);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 9px;
+}
+
+.seal-content h2 {
+    margin-top: 10px;
+
+    color: var(--burgundy);
+
+    font-size: 39px;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+.seal-message {
+    margin-top: 13px;
+
+    color: var(--brown-soft);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+/* ========================================
+   DOWNLOAD
+======================================== */
+
+.download-button {
+    margin-top: 28px;
+
+    min-height: 52px;
+
+    padding: 0 27px;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--burgundy);
+
+    background: var(--burgundy);
+
+    color: var(--white);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 9px 23px rgba(123, 63, 74, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+
+    background: var(--burgundy-dark);
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes contractReveal {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes heartPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes sealStamp {
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.35)
+            rotate(-15deg);
+    }
+
+    55% {
+        opacity: 1;
+
+        transform:
+            scale(1.12)
+            rotate(3deg);
+    }
+
+    75% {
+        transform:
+            scale(0.96)
+            rotate(-1deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 700px) {
+    .contract-page {
+        padding: 22px 14px 40px;
+    }
+
+    .contract-card {
+        padding: 45px 30px 38px;
+    }
+
+    .clause {
+        grid-template-columns: 52px 1fr;
+
+        gap: 15px;
+
+        padding: 21px 18px;
+    }
+
+    .clause-number {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+    .contract-page {
+        padding: 12px 9px 30px;
+    }
+
+    .contract-card {
+        padding: 38px 19px 32px;
+    }
+
+    .contract-card::before {
+        inset: 8px;
+    }
+
+    .contract-card::after {
+        inset: 15px;
+    }
+
+    .contract-eyebrow {
+        letter-spacing: 2.5px;
+    }
+
+    .contract-header h1 {
+        font-size: 39px;
+    }
+
+    .contract-subtitle {
+        font-size: 13px;
+    }
+
+    .gold-divider {
+        margin: 23px auto 27px;
+    }
+
+    .gold-divider span {
+        width: 55px;
+    }
+
+    .contract-intro {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .clause {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        padding: 20px 17px;
+    }
+
+    .clause-number {
+        width: 39px;
+        height: 39px;
+
+        font-size: 14px;
+    }
+
+    .clause-content h2 {
+        font-size: 18px;
+    }
+
+    .clause-content p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .signature-section {
+        margin-top: 36px;
+
+        padding-top: 30px;
+    }
+
+    .signature-heading h2 {
+        font-size: 27px;
+    }
+
+    #signatureCanvas {
+        height: 165px;
+    }
+
+    .signature-line {
+        left: 18px;
+        right: 18px;
+    }
+
+    .signature-label {
+        left: 20px;
+    }
+
+    .agree-button {
+        width: 100%;
+
+        max-width: 230px;
+    }
+
+    .seal-content {
+        padding: 42px 23px 32px;
+    }
+
+    .wax-seal {
+        width: 96px;
+        height: 96px;
+
+        font-size: 34px;
+    }
+
+    .seal-content h2 {
+        font-size: 32px;
+    }
+
+    .seal-message {
+        font-size: 14px;
+    }
+
+    .download-button {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

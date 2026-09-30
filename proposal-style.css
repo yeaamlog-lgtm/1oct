@@ -1,0 +1,551 @@
+:root {
+    --ivory: #f7f1e8;
+    --ivory-deep: #eee3d5;
+    --rose: #d9a7a7;
+    --rose-soft: #ead0d0;
+    --burgundy: #7b3f4a;
+    --burgundy-dark: #5f3039;
+    --gold: #c9ad78;
+    --taupe: #a99582;
+    --brown: #5f5148;
+    --white: #fffdf9;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 255, 255, 0.8),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            var(--ivory),
+            var(--ivory-deep)
+        );
+    color: var(--brown);
+    overflow-x: hidden;
+}
+
+/* ========================================
+   PAGE
+======================================== */
+
+.proposal-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.proposal-page::before,
+.proposal-page::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(201, 173, 120, 0.28);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.proposal-page::before {
+    width: 420px;
+    height: 420px;
+    top: -220px;
+    left: -180px;
+}
+
+.proposal-page::after {
+    width: 500px;
+    height: 500px;
+    right: -270px;
+    bottom: -270px;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.proposal-card {
+    width: min(680px, 100%);
+    position: relative;
+    z-index: 2;
+
+    padding: 48px 46px 44px;
+
+    background:
+        linear-gradient(
+            rgba(255, 253, 249, 0.94),
+            rgba(250, 243, 234, 0.94)
+        );
+
+    border: 1px solid rgba(201, 173, 120, 0.48);
+
+    box-shadow:
+        0 28px 70px rgba(95, 81, 72, 0.15),
+        0 8px 25px rgba(123, 63, 74, 0.08);
+
+    text-align: center;
+
+    animation:
+        cardReveal 1s cubic-bezier(.2, .8, .2, 1)
+        both;
+}
+
+.proposal-card::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201, 173, 120, 0.2);
+    pointer-events: none;
+}
+
+/* ========================================
+   ORNAMENT
+======================================== */
+
+.proposal-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    color: var(--gold);
+    margin-bottom: 22px;
+}
+
+.proposal-ornament span {
+    width: 70px;
+    height: 1px;
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            var(--gold)
+        );
+}
+
+.proposal-ornament span:last-child {
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            var(--gold)
+        );
+}
+
+.proposal-ornament div {
+    font-size: 25px;
+    color: var(--burgundy);
+    animation: gentleHeart 2.8s ease-in-out infinite;
+}
+
+/* ========================================
+   TEXT
+======================================== */
+
+.proposal-eyebrow {
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: var(--taupe);
+
+    margin-bottom: 15px;
+}
+
+.proposal-card h1 {
+    font-size: clamp(38px, 7vw, 58px);
+    line-height: 1.05;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--burgundy);
+}
+
+.proposal-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    margin: 25px auto 27px;
+
+    color: var(--gold);
+}
+
+.proposal-divider span:first-child,
+.proposal-divider span:last-child {
+    width: 65px;
+    height: 1px;
+    background: rgba(201, 173, 120, 0.55);
+}
+
+.proposal-divider span:nth-child(2) {
+    font-size: 11px;
+}
+
+.proposal-text {
+    max-width: 555px;
+    margin: 0 auto;
+
+    font-size: 18px;
+    line-height: 1.9;
+
+    color: var(--brown);
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.proposal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    margin-top: 35px;
+    min-height: 58px;
+}
+
+.proposal-button {
+    min-width: 135px;
+    height: 54px;
+
+    padding: 0 28px;
+
+    border-radius: 999px;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease,
+        background 0.3s ease;
+}
+
+.yes-button {
+    border: 1px solid var(--burgundy);
+    background: var(--burgundy);
+    color: var(--white);
+
+    box-shadow:
+        0 9px 24px rgba(123, 63, 74, 0.2);
+}
+
+.yes-button:hover {
+    transform: translateY(-3px);
+    background: var(--burgundy-dark);
+
+    box-shadow:
+        0 13px 30px rgba(123, 63, 74, 0.27);
+}
+
+.yes-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.no-button {
+    border: 1px solid rgba(95, 81, 72, 0.35);
+    background: rgba(255, 253, 249, 0.75);
+    color: var(--brown);
+
+    transform-origin: center;
+}
+
+.no-button:hover {
+    background: var(--ivory);
+}
+
+.proposal-button:focus-visible {
+    outline: 3px solid rgba(217, 167, 167, 0.5);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   HINT
+======================================== */
+
+.proposal-hint {
+    min-height: 22px;
+
+    margin-top: 18px;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    color: var(--taupe);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.proposal-hint.visible {
+    opacity: 1;
+}
+
+/* ========================================
+   TRANSITION
+======================================== */
+
+.contract-transition {
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf4 0%,
+            var(--ivory) 55%,
+            #eaded0 100%
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.contract-transition.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.transition-heart {
+    font-size: 64px;
+    color: var(--burgundy);
+
+    animation:
+        transitionHeart 1.4s ease-in-out infinite;
+}
+
+.contract-transition p {
+    margin-top: 18px;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: var(--taupe);
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes gentleHeart {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes transitionHeart {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.18);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 700px) {
+    .proposal-page {
+        padding: 22px 15px;
+    }
+
+    .proposal-card {
+        padding: 40px 30px 38px;
+    }
+
+    .proposal-text {
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .proposal-ornament span {
+        width: 50px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+    .proposal-page {
+        padding: 16px 12px;
+    }
+
+    .proposal-card {
+        padding: 34px 21px 32px;
+    }
+
+    .proposal-card::before {
+        inset: 7px;
+    }
+
+    .proposal-eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .proposal-card h1 {
+        font-size: 39px;
+    }
+
+    .proposal-divider {
+        margin: 21px auto 23px;
+    }
+
+    .proposal-divider span:first-child,
+    .proposal-divider span:last-child {
+        width: 42px;
+    }
+
+    .proposal-text {
+        font-size: 16px;
+        line-height: 1.78;
+    }
+
+    .proposal-actions {
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .proposal-button {
+        min-width: 120px;
+        height: 51px;
+        padding: 0 21px;
+        font-size: 12px;
+    }
+
+    .proposal-ornament {
+        margin-bottom: 18px;
+    }
+}
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 360px) {
+    .proposal-card {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .proposal-card h1 {
+        font-size: 34px;
+    }
+
+    .proposal-text {
+        font-size: 15px;
+    }
+
+    .proposal-actions {
+        gap: 9px;
+    }
+
+    .proposal-button {
+        min-width: 108px;
+        padding: 0 15px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
